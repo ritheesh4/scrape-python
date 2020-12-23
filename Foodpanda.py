@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 import urllib
 import re
 list1 = []
-html_page = urllib.request.urlopen("https://www.foodpanda.co.th/restaurants/lat/13.707752314036142/lng/100.48757553386835/city/Krung%20Thep%20Maha%20Nakhon/address/79%2520Somdet%2520Phra%2520Chao%2520Tak%2520Sin%2520Rd%252C%2520Khwaeng%2520Samre%252C%2520Khet%2520Thon%2520Buri%252C%2520Krung%2520Thep%2520Maha%2520Nakhon%252010600%252C%2520Thailand/Somdet%2520Phra%2520Chao%2520Tak%2520Sin%2520Road/79?postcode=Khwaeng+Samre")
+html_page = urllib.request.urlopen("https://www.foodpanda.co.th/restaurants/new?lat=13.707752314036142&lng=100.48757553386835&vertical=restaurants")
 soup = BeautifulSoup(html_page)
 for link in soup.findAll('a'):
     x = link.get('href')
@@ -56,7 +56,7 @@ SEARCH_PAGE_URL = "https://www.foodpanda.co.th/restaurants/lat/13.70775231403614
 # In[5]:
 
 
-chromedriver = r"C:\Users\trasto02\Downloads\chromedriver_win32\chromedriver.exe"
+chromedriver = "/usr/local/bin/chromedriver"
 driver = webdriver.Chrome(chromedriver)
 driver.get(SEARCH_PAGE_URL)
 
@@ -114,7 +114,7 @@ print(list2[0])
 
 
 res = requests.get("""https://www.foodpanda.co.th/restaurants/lat/13.707752314036142/lng/100.48757553386835/city/Krung%20Thep%20Maha%20Nakhon/address/79%2520Somdet%2520Phra%2520Chao%2520Tak%2520Sin%2520Rd%252C%2520Khwaeng%2520Samre%252C%2520Khet%2520Thon%2520Buri%252C%2520Krung%2520Thep%2520Maha%2520Nakhon%252010600%252C%2520Thailand/Somdet%2520Phra%2520Chao%2520Tak%2520Sin%2520Road/79?postcode=Khwaeng%20Samre""")
-res.text,.
+res.text
 
 
 # In[41]:
